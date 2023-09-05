@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker Game</title>
+</head>
+<body>
+    <p>Score: <span id="score">0</span></p>
+
+    <img src="images/box.png" height="256px" alt="box" onclick="addToScore(clickingPower)">
+
+    <button onclick="buyPen()">Pen [<span id="pencost">15</span>] -- <span id="pens">0</span></button>
+    <button onclick="buyScissor()">Scissor [<span id="scissorcost">100</span>] -- <span id="scissors">0</span></button>
+    <button onclick="buyHammer()">Hammer [<span id="hammercost">500</span>] -- <span id="hammers">0</span></button>
+    <button onclick="buyChainsaw()">Chainsaw [<span id="chainsawcost">1000</span>] -- <span id="chainsaws">0</span></button>
+    
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
