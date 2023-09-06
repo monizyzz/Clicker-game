@@ -87,7 +87,7 @@ function buyThorHammer() {
 }
 
 function updateScorePerSecond() {
-    scorePerSecond = pens + scissors * 3 + hammers * 5 + chainsaws * 10 + thorhammers * 30
+    scorePerSecond = pens + scissors * 3 + hammers * 5 + chainsaws * 10 + thorhammers * 50
     document.getElementById('scorepersecond').innerHTML = scorePerSecond
 }
 
@@ -96,7 +96,7 @@ setInterval (function() {
     score += scissors * 3
     score += hammers * 5
     score += chainsaws * 10
-    score += thorhammers * 30
+    score += thorhammers * 50
 
     document.getElementById('score').innerHTML = score
 
