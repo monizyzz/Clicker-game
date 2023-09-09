@@ -16,7 +16,7 @@
         <br class="unselectable">
         
         <div class="clickerContainer unselectable">
-            <img src="images/box.png" height="256px" alt="box" onclick="addToScore(clickingPower)">
+            <img src="images/box.png" height="256px" alt="box" onclick="game.addToScore(game.clickValue)">
         </div>
         <div class="sectionFooter">
             <h5>Box Clicker</h5>
@@ -24,77 +24,8 @@
         </div>
     </div>
     
-    <div class="sectionRight">
-        <table class="shopButton unselectable" onclick="buyPen()">
-            <tr>
-                <td class="image unselectable">
-                    <img src="images/pen.png" alt="pen">
-                </td>
-                <td class="nameAndCost unselectable">
-                    <p>Pen</p>
-                    <p><span id="pencost">15</span> box</p>
-                </td>
-                <td class="amount unselectable">
-                    <span id="pens">0</span>
-                </td>
-            </tr>
-        </table> 
-        <table class="shopButton unselectable" onclick="buyScissor()">   
-            <tr>
-                <td class="image unselectable">
-                    <img src="images/scissor.png" alt="scissor">
-                </td>
-                <td class="nameAndCost unselectable">
-                    <p>Scissor</p>
-                    <p><span id="scissorcost">100</span> box</p>
-                </td>
-                <td class="amount unselectable">
-                    <span id="scissors">0</span>
-                </td>
-            </tr>
-        </table>
-        <table class="shopButton unselectable" onclick="buyHammer()">   
-            <tr>
-                <td class="image unselectable">
-                    <img src="images/hammer.webp" alt="hammer">
-                </td>
-                <td class="nameAndCost unselectable">
-                    <p>Hammer</p>
-                    <p><span id="hammercost">500</span> box</p>
-                </td>
-                <td class="amount unselectable">
-                    <span id="hammers">0</span>
-                </td>
-            </tr>
-        </table>
-        <table class="shopButton unselectable" onclick="buyChainsaw()">   
-            <tr>
-                <td class="image unselectable">
-                    <img src="images/chainsaw.webp" alt="chainsaw">
-                </td>
-                <td class="nameAndCost unselectable">
-                    <p>Chainsaw</p>
-                    <p><span id="chainsawcost">1500</span> box</p>
-                </td>
-                <td class="amount unselectable">
-                    <span id="chainsaws">0</span>
-                </td>
-            </tr>
-        </table>
-        <table class="shopButton unselectable" onclick="buyThorHammer()">   
-            <tr>
-                <td class="image unselectable">
-                    <img src="images/thor-hammer.png" alt="thor-hammer">
-                </td>
-                <td class="nameAndCost unselectable">
-                    <p>Thor Hammer</p>
-                    <p><span id="thorhammercost">10000</span> box</p>
-                </td>
-                <td class="amount unselectable">
-                    <span id="thorhammers">0</span>
-                </td>
-            </tr>
-        </table>     
+    <div class="sectionRight" id="shopContainer">
+    
     </div>
 
     <script src="script.js"></script>
