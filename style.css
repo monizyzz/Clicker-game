@@ -88,3 +88,8 @@
     -ms-user-select: none; /* if not using chromium brower */
     user-select: none;
 }
+
+#upgradeContainer img {
+    height: 64px;
+    width: 64px;
+}
