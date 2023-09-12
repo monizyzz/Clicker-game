@@ -252,11 +252,6 @@ function loadGame() {
     }
 }
 
-document.getElementById('clicker').addEventListener('click', function() {
-    game.totalClicks++
-    game.addToScore(game.clickValue)
-}, false)
-
 function resetGame() {
     if (confirm('Are you sure you want to reset your game?')) {
         var gameSave = {}
@@ -264,6 +259,66 @@ function resetGame() {
         location.reload()
     }
 }
+
+function randomNumber(min, max) {
+    return Math.round(Math.random() * (max - min) + min)
+}
+
+function fadeOut(element, duration, finalOpacity, callback) {
+    let opacity = 1
+
+    let elementFadingInterval = window.setInterval(function() {
+        opacity -= 50 / duration
+
+        if (opacity <= finalOpacity) {
+            clearInterval(elementFadingInterval)
+            callback()
+        }  
+        
+        element.style.opacity = opacity
+    }, 50) 
+}
+
+function createNumberOnClicker(event) {
+    // grab the clicker
+    let clicker = document.getElementById('clicker')
+
+    // grab the position on where the clicker was clicked
+    let clickerOffset = clicker.getBoundingClientRect()
+    let position = {
+        x: event.pageX - clickerOffset.left + randomNumber(-5, 5),
+        y: event.pageY - clickerOffset.top   
+    }
+
+    // create the number
+    let element = document.createElement('div')
+    element.textContent = '+' + game.clickValue
+    element.classList.add('number', 'unselectable')
+    element.style.left = position.x + 'px'
+    element.style.top = position.y + 'px'
+
+    // add number to the clicker
+    clicker.appendChild(element)
+
+    // slowly rise the element
+    let movementInterval = window.setInterval(function() {
+        if (typeof element == 'undefined' && element == 'null') clearInterval(movementInterval)
+
+        position.y--
+        element.style.top = position.y + 'px'
+    }, 10)
+
+    fadeOut(element, 1500, 0, function(event) {
+        element.remove()
+    })
+}
+
+document.getElementById('clicker').addEventListener('click', function(event) {
+    game.totalClicks++
+    game.addToScore(game.clickValue)
+
+    createNumberOnClicker(event)
+}, false)
 
 window.onload = function() {
     loadGame()
